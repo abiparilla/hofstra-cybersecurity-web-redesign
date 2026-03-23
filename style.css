@@ -22,7 +22,7 @@ body::before {
 }
 
 /* Navigation Menu */
-#mobile-nav{
+.nav{
   position:fixed;
   top:0;
   left:0;
@@ -32,57 +32,64 @@ body::before {
   box-shadow:0 2px 0 rgba(255,255,255,.08);
 }
 
-#mobile-nav .menu {
+.nav .menu {
   height:40px;
   margin:0;
-  padding:0 20px;
+  padding:0;
   list-style:none;
   display:flex;
   align-items:stretch;
   justify-content:center;
 }
 
-#mobile-nav .menu>li {
-  position:relative;
+.nav .menu>li {
+  flex:1;
   display:flex;
+  justify-content:center;
+  position:relative;
   align-items:center;
 }
 
-#mobile-nav .menu>li>span,
-#mobile-nav .menu>li>a {
+.nav .menu>li>span,
+.nav .menu>li>a {
   display:flex;
   align-items:center;
   height:40px;
+  width:100%;
   padding:0 31px;
   color:white;
   text-decoration:none;
   text-transform:uppercase;
+  text-align:center;
   letter-spacing:2px;
   font-weight:700;
   font-size:15px;
   line-height:1;
+  justify-content:center;
 }
 
-#mobile-nav .menu > li > span:hover,
-#mobile-nav .menu > li > a:hover{background: rgba(255, 255, 255, 0.15);}
+.nav .menu > li > span:hover,
+.nav .menu > li > a:hover{background: rgba(255, 255, 255, 0.15);}
 
-#mobile-nav .menu>li>span{cursor: default;}
+.nav .menu>li>span{cursor: default;}
 
-#mobile-nav .has-children>ul{
+.nav .has-children>ul{
   display:none;
   position:absolute;
   top:40px;
   left:0;
-  min-width:170px;
+  width:100%;
+  min-width:100%;
   margin:0;
   padding:0;
   list-style:none;
   background:#859BCB;
+  box-sizing:border-box;
 }
 
-#mobile-nav .has-children:hover>ul{display: block;}
+.nav .has-children:hover>ul{display: block;}
 
-#mobile-nav .has-children>ul>li>a{
+.nav .has-children>ul>li>a{
   display:block;
   padding:11px 18px;
   color:white;
@@ -94,15 +101,15 @@ body::before {
   border-bottom:1px solid rgba(255, 255, 255, 0.15);
 }
 
-#mobile-nav .has-children>ul>li>a:hover{background: rgba(255, 255, 255, 0.12);}
+.nav .has-children>ul>li>a:hover{background: rgba(255, 255, 255, 0.12);}
 
-#mobile-nav .menu>li:nth-last-child(2)>a{
+.nav .menu>li:nth-last-child(2)>a{
   background:#FFC72D;
   color:#003595;
   font-weight:800;
 }
 
-#mobile-nav .close{display: none;}
+.nav .close{display: none;}
 
 /* Title Header */
 header {
@@ -168,7 +175,7 @@ header h3 {
 .request-link .subtitle{margin-top:3px; font-size:.95rem; font-weight:700;}
 
 /* Content */
-.message{
+.content{
   position:relative;
   z-index:2;
   width:min(100%,630px);
@@ -178,55 +185,54 @@ header h3 {
   color:white;
 }
 
-.message h2{
+.content h2{
   margin:0 0 10px;
   font-size:clamp(1.5rem,2.3vw,2.7rem);
   line-height:1.05;
   font-weight:900;
 }
 
-.message ul{margin:0; padding-left:22px;}
+.content ul{margin:0; padding-left:22px;}
 
-.message ul li{
+.content ul li{
   margin:10px 0;
   font-size:1.02rem;
   line-height:1.35;
 }
 
-.message strong,
-.message em{font-weight:800;}
+.content strong,
+.content em{font-weight:800;}
 
-.message em{font-style:normal;}
+.content em{font-style:normal;}
 
-.message a,
-.message ul li a{
+.content a,
+.content ul li a{
   color:#FFC72D;
   text-decoration:none;
   font-weight:800;
 }
 
-.message h3{
+.content h3{
   margin:18px 0 10px;
   font-size:1.3rem;
   line-height:1.15;
 }
 
-.message h3 a{color:#fff; text-decoration:none;}
+.content h3 a{color:#fff; text-decoration:none;}
 
 /* Responsive: Laptops (≤1024px) */
 @media (max-width:1024px){
   body{background-attachment:scroll;}
 
-  #mobile-nav .menu{
+  .nav .menu{
     justify-content:flex-start;
-    overflow-x:auto;
     padding:0 12px;
     scrollbar-width:none;
   }
-  #mobile-nav .menu::-webkit-scrollbar{display:none;}
+  .nav .menu::-webkit-scrollbar{display:none;}
 
-  #mobile-nav .menu>li>span,
-  #mobile-nav .menu>li>a{
+  .nav .menu>li>span,
+  .nav .menu>li>a{
     padding:0 18px;
     font-size:13px;
     letter-spacing:1px;
@@ -242,12 +248,12 @@ header h3 {
   .request-link .title{font-size:1rem;}
   .request-link .subtitle{font-size:.9rem;}
 
-  .message{
+  .content{
     width:min(100%,580px);
     margin:16px auto 36px;
     padding:18px 22px 22px;
   }
-  .message h2{font-size:2rem;}
+  .content h2{font-size:2rem;}
 }
 
 /* Responsive: Tablets (≤768px) */
@@ -267,12 +273,12 @@ header h3 {
     font-size:20px;
   }
   
-  #mobile-nav{
+  .nav{
     position:relative;
     height:auto;
   }
 
-  #mobile-nav .menu{
+  .nav .menu{
     display:flex;
     flex-direction:column;
     align-items:stretch;
@@ -282,13 +288,13 @@ header h3 {
     gap:0;
   }
 
-  #mobile-nav .menu > li{
+  .nav .menu > li{
     width:100%;
     display:block;
   }
 
-  #mobile-nav .menu > li > span,
-  #mobile-nav .menu > li > a{
+  .nav .menu > li > span,
+  .nav .menu > li > a{
     width:100%;
     height:auto;
     min-height:36px;
@@ -300,7 +306,7 @@ header h3 {
     font-size:12px;
   }
 
-  #mobile-nav .has-children > ul{
+  .nav .has-children > ul{
     position:static;
     width:100%;
     min-width:0;
@@ -308,12 +314,12 @@ header h3 {
     background:#859BCB;
   }
 
-  #mobile-nav .has-children:hover > ul,
-  #mobile-nav .has-children:focus-within > ul{
+  .nav .has-children:hover > ul,
+  .nav .has-children:focus-within > ul{
     display:block;
   }
 
-  #mobile-nav .has-children > ul > li > a{
+  .nav .has-children > ul > li > a{
     display:block;
     width:100%;
     text-align:center;
@@ -321,25 +327,26 @@ header h3 {
     font-size:12px;
   }
 
-  .message h2{
+  .content h2{
     font-size:1.4rem;
     line-height:1.2;
   }
 
-  .message{
+  .content{
     padding:14px 16px;
+    background:#003495a6;
   }
 }
 
 /* Responsive: Small Screens (≤480px) */
 @media (max-width:480px){
-  #mobile-nav .menu{
+  .nav .menu{
     justify-content:flex-start;
     padding:6px 8px;
   }
 
-  #mobile-nav .menu>li>span,
-  #mobile-nav .menu>li>a{
+  .nav .menu>li>span,
+  .nav .menu>li>a{
     height:34px;
     padding:0 12px;
     font-size:11px;
@@ -350,12 +357,12 @@ header h3 {
   header h3{font-size:18px;}
 
   .request-link{padding:14px;}
-  .message{
+  .content{
     width:calc(100% - 16px);
     padding:14px;
   }
 
-  .message ul li{
+  .content ul li{
     font-size:.9rem;
     line-height:1.5;
   }
