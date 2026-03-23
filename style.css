@@ -1,24 +1,25 @@
 html, body {
-    margin:0;
-    padding:0;
-    min-height:100%;
-    font-family: Georgia, "Times New Roman", serif;
-    overflow-x:hidden;
+  margin:0;
+  padding:0;
+  min-height:100%;
+  overflow-x:hidden;
 }
 
 body {
-    background: url('https://images.sidearmdev.com/crop?url=https%3a%2f%2fdxbhsrqyrr690.cloudfront.net%2fsidearm.nextgen.sites%2fhofstra.sidearmsports.com%2fimages%2f2024%2f7%2f16%2f120423_Hofstra_at_Night_032.jpg&height=1080&width=1920&type=webp&gravity=smart');
-    background-size:cover;
-    background-position:center;
-    position:relative;
+  background-color: #003594;
+  background:url('https://images.sidearmdev.com/crop?url=https%3a%2f%2fdxbhsrqyrr690.cloudfront.net%2fsidearm.nextgen.sites%2fhofstra.sidearmsports.com%2fimages%2f2024%2f7%2f16%2f120423_Hofstra_at_Night_032.jpg&height=1080&width=1920&type=webp&gravity=smart');
+  background-size:cover;
+  background-position:center;
+  position:relative;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body::before {
-    content:"";
-    position:fixed;
-    inset:0;
-    background:rgba(0, 67, 139, 0.538);
-    z-index:-1;
+  content:"";
+  position:fixed;
+  inset:0;
+  background:rgba(0, 67, 139, 0.538);
+  z-index:-1;
 }
 
 /* Navigation Menu */
@@ -185,6 +186,8 @@ header h3 {
   color:white;
 }
 
+h1, h2, h3 {font-family: 'Playfair Display', serif;}
+
 .content h2{
   margin:0 0 10px;
   font-size:clamp(1.5rem,2.3vw,2.7rem);
@@ -258,25 +261,12 @@ header h3 {
 
 /* Responsive: Tablets (≤768px) */
 @media (max-width:768px){
-  
-  header{
-    min-height:auto;
-    padding:50px 16px 10px;
-  }
 
-  header h1{
-    font-size:30px;
-    padding-top:8px;
-  }
-
-  header h3{
-    font-size:20px;
-  }
+  header{min-height:auto; padding:50px 16px 10px;}
+  header h1{font-size:30px; padding-top:8px;}
+  header h3{font-size:20px;}
   
-  .nav{
-    position:relative;
-    height:auto;
-  }
+  .nav{position:relative; height:auto;}
 
   .nav .menu{
     display:flex;
@@ -288,10 +278,7 @@ header h3 {
     gap:0;
   }
 
-  .nav .menu > li{
-    width:100%;
-    display:block;
-  }
+  .nav .menu > li{width:100%; display:block;}
 
   .nav .menu > li > span,
   .nav .menu > li > a{
@@ -315,9 +302,7 @@ header h3 {
   }
 
   .nav .has-children:hover > ul,
-  .nav .has-children:focus-within > ul{
-    display:block;
-  }
+  .nav .has-children:focus-within > ul{display:block;}
 
   .nav .has-children > ul > li > a{
     display:block;
@@ -327,23 +312,13 @@ header h3 {
     font-size:12px;
   }
 
-  .content h2{
-    font-size:1.4rem;
-    line-height:1.2;
-  }
-
-  .content{
-    padding:14px 16px;
-    background:#003495a6;
-  }
+  .content h2{font-size:1.4rem; line-height:1.2;}
+  .content{padding:14px 16px; background:#003495a6;}
 }
 
 /* Responsive: Small Screens (≤480px) */
 @media (max-width:480px){
-  .nav .menu{
-    justify-content:flex-start;
-    padding:6px 8px;
-  }
+  .nav .menu{justify-content:flex-start; padding:6px 8px;}
 
   .nav .menu>li>span,
   .nav .menu>li>a{
@@ -352,18 +327,12 @@ header h3 {
     font-size:11px;
   }
 
-  header{min-height:32vh; padding:96px 12px 8px;}
+  header{min-height:32vh; padding:96px 12px 18px;}
   header h1{font-size:26px;}
   header h3{font-size:18px;}
 
   .request-link{padding:14px;}
-  .content{
-    width:calc(100% - 16px);
-    padding:14px;
-  }
 
-  .content ul li{
-    font-size:.9rem;
-    line-height:1.5;
-  }
+  .content{width:calc(100% - 16px); padding:14px;}
+  .content ul li{font-size:.9rem; line-height:1.5;}
 }
